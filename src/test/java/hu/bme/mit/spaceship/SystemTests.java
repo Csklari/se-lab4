@@ -27,6 +27,8 @@ import java.util.stream.Stream;
 
 class SystemTests {
 
+    
+
     /**
      * Test the ship using the command line interface.
      *
@@ -39,6 +41,12 @@ class SystemTests {
         // Arrange
         InputStream in = new FileInputStream(input.toFile());
         OutputStream actualOut = new ByteArrayOutputStream();
+
+        // Act
+        GT4500 ship = new GT4500(); // Hajó inicializálása
+        //CommandLineInterface.setter(ship); // Ha van setter a hajóhoz
+        CommandLineInterface.run(in, actualOut);
+
 
         // Act
         CommandLineInterface.run(in, actualOut);
